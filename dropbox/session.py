@@ -277,7 +277,7 @@ class DropboxSession(BaseSession):
         if not s:
             raise ValueError("Invalid parameter string.")
 
-        params = parse_qs(s, keep_blank_values=False)
+        params = parse_qs(s.decode("utf-8"), keep_blank_values=False)
         if not params:
             raise ValueError("Invalid parameter string: %r" % s)
 
